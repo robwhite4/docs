@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="layout-playground">
     <Layout>
       <template v-slot:page-top>
         <div class="try-handlebars">
@@ -21,16 +21,16 @@ export default {
   components: { Layout, Workspace },
   data() {
     return {
-      nonInteractiveForPrerendering: true
+      nonInteractiveForPrerendering: true,
     };
   },
   computed: {
     parsedExampleWithEnsuredPreparationScript() {
       return {
         ...this.$frontmatter.parsedExample,
-        preparationScript: this.$frontmatter.parsedExample.preparationScript || this.emptyPreparationScript()
+        preparationScript: this.$frontmatter.parsedExample.preparationScript || this.emptyPreparationScript(),
       };
-    }
+    },
   },
   mounted() {
     this.nonInteractiveForPrerendering = false;
@@ -42,8 +42,8 @@ export default {
       //    return string.toUpperCase()
       // });
       `;
-    }
-  }
+    },
+  },
 };
 </script>
 <style lang="stylus">
